@@ -16,5 +16,11 @@ let GameField = ({ isPlaying, isPaused, isGameOver })=>{
     }
     return <div>rd?</div>;
 };
-GameField = connect()(GameField);
+const mapStateToProps = ({ gameStatus }) => ({
+    isPlaying: gameStatus !== 'IDLE',
+    isPaused: gameStatus === 'PAUSED',
+    isGameOver: gameStatus === 'GAME_OVER',
+});
+
+GameField = connect(mapStateToProps)(GameField);
 export default GameField ;
