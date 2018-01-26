@@ -30,10 +30,9 @@ const Tetromino = ({ shape, offsetX, offsetY, color }) => {
     const ys = coordinates.map((coord) => (coord.y * blockUnit) + offsetY);
     return (
         <div>
-            hi
-        {/*<Group>*/}
-            {/*{tetrominoGroup(xs, ys, color)}*/}
-        {/*</Group>*/}
+        <Group>
+            {tetrominoGroup(xs, ys, color)}
+        </Group>
         </div>
     );
 };

@@ -14,7 +14,7 @@ export const PAUSE_GAME = 'PAUSE_GAME';
 export const UNPAUSE_GAME = 'UNPAUSE_GAME';
 
 export const startGame = () => {
-    const { shapesMapping } = ['straight', 'square', 'cross', 'leftGun', 'rightGun', 'leftSnake', 'rightSnake',];
+    const  shapesMapping  = ['straight', 'square', 'cross', 'leftGun', 'rightGun', 'leftSnake', 'rightSnake',];
     const currentRandomNumber = Math.floor(Math.random() * 7);
     const nextRandomNumber = Math.floor(Math.random() * 7);
     const currentRandomShape = shapesMapping[currentRandomNumber];
