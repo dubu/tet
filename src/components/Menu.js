@@ -1,10 +1,10 @@
 import React from 'react';
 import style from '../styles/styles.css';
-import {startGame} from '../actions/index.js';
+import {loadMenu} from '../actions/index.js';
 
 class Menu extends React.Component {
     componentDidMount() {
-        this.props.dispatch(startGame());
+        this.props.dispatch(loadMenu());
     }
     render() {
         return (

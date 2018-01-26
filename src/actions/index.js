@@ -26,3 +26,22 @@ export const startGame = () => {
         nextRandomShape,
     };
 };
+
+export const loadMenu = () => (
+    function(dispatch) {
+        function handleSpaceBar(e) {
+            if (e.keyCode === 32) {
+                dispatch(loadGame());
+                window.removeEventListener('keyup', handleSpaceBar);
+            }
+        }
+        window.addEventListener('keyup', handleSpaceBar);
+    }
+);
+
+
+export const loadGame = () => (
+    function (dispatch, getState){
+        dispatch(startGame());
+    }
+);
