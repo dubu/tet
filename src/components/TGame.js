@@ -5,12 +5,12 @@ import GameField from './GameField';
 injectTapEventPlugin();
 
 const {fieldWidth, fieldHeight} = {fieldWidth: 300, fieldHeight: 660};
-const TGame = ()=>{
+const TGame = ()=>(
     <div>
        <div>
            <GameField width={fieldWidth} height={fieldHeight} />
        </div>
     </div>
 
-};
+);
 export default TGame;

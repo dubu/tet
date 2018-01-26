@@ -8,9 +8,7 @@ let GameField = ()=>{
    return (
        <div style={{display: 'inline'}}>
            <div className={style.gameField}>
-               <Layer>
                   <CurrentTetromino />
-               </Layer>
            </div>
        </div>
    );
