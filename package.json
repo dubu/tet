@@ -2,8 +2,9 @@
   "name": "tet",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://dubu.github.io/tet/",
   "dependencies": {
-    "react-scripts": "1.1.0",
+    "gh-pages": "^1.1.0",
     "konva": "^1.0.3",
     "material-ui": "^0.15.3",
     "normalize.css": "^5.0.0",
@@ -11,6 +12,7 @@
     "react-dom": "15.2.0",
     "react-konva": "1.0.5",
     "react-redux": "^4.4.5",
+    "react-scripts": "1.1.0",
     "react-tap-event-plugin": "1.0.0",
     "redux": "^3.5.2",
     "redux-thunk": "^2.1.0",
@@ -20,6 +22,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   }
 }
