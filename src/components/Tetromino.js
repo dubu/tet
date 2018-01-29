@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Rect, Group } from 'react-konva';
+import { Rect, Group, Text } from 'react-konva';
 import gameConstants from '../gameConstants.js';
 
 const { blockUnit } = gameConstants;
@@ -25,7 +25,7 @@ function tetrominoGroup(xs, ys, color) {
     }
 
 
-    // arr.push(<div>11</div>)
+    // arr.push(  <Text text="Try click on recttttt" />)
     // arr.push(<div>11</div>)
     // arr.push(<div>11</div>)
     // arr.push(<div>11</div>)
@@ -33,13 +33,14 @@ function tetrominoGroup(xs, ys, color) {
     // console.log("arr == "+arr[0]);
     //
     //
-    // return <svg><Rect key={0} width={blockUnit} height={blockUnit} x={10} y={10} fill={"black"} stroke="black" strokeWidth={5} /></svg>;
+    // return <Rect  width={blockUnit} height={blockUnit} x={10} y={10} fill={"black"} stroke="black" strokeWidth={5} />;
 
     // return  <div>aal<svg><rect  width="70" height="10" color="black" /></svg>ccc</div>;
 
     // return (<div> grorup</div>)
 
     return arr;
+
 }
 
 
@@ -60,9 +61,9 @@ const Tetromino = ({ shape, offsetX, offsetY, color }) => {
     const xs = coordinates.map((coord) => (coord.x * blockUnit) + offsetX);
     const ys = coordinates.map((coord) => (coord.y * blockUnit) + offsetY);
     return (
-        <div>
+        <Group>
             {tetrominoGroup(xs, ys, color)}
-        </div>
+        </Group>
     );
 };
 
