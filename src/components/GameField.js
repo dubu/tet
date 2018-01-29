@@ -4,17 +4,23 @@ import { connect } from 'react-redux';
 import CurrentTetromino from '../containers/CurrentTetromino.js';
 import style from '../styles/styles.css';
 const {fieldWidth, fieldHeight} = {fieldWidth: 300, fieldHeight: 660};
+
 let GameField = ({ isPlaying, isPaused, isGameOver })=>{
     if (isPlaying) {
         return (
             <div style={{display: 'inline'}}>
                 <div className={style.gameField}>
+                    <Stage width={fieldWidth} height={fieldHeight}>
+                        <Layer>
                     <CurrentTetromino/>
+                        </Layer>
+                    </Stage>
                 </div>
+
             </div>
         );
     }
-    return <div>rd?</div>;
+    return <div>r?</div>;
 };
 const mapStateToProps = ({ gameStatus }) => ({
     isPlaying: gameStatus !== 'IDLE',

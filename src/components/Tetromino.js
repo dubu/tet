@@ -1,8 +1,9 @@
 
 import React from 'react';
 import { Rect, Group } from 'react-konva';
+import gameConstants from '../gameConstants.js';
 
-const { blockUnit } = {blockUnit: 30};
+const { blockUnit } = gameConstants;
 
 function getCoordinates(shape) {
     const coordinates = [];
@@ -18,21 +19,49 @@ function getCoordinates(shape) {
 
 function tetrominoGroup(xs, ys, color) {
     const arr = [];
+    // console.log("xs==" + ys)
     for (let i = 0 ; i<xs.length; i++) {
         arr.push(<Rect key={i} width={blockUnit} height={blockUnit} x={xs[i]} y={ys[i]} fill={color} stroke="black" strokeWidth={5} />);
     }
+
+
+    // arr.push(<div>11</div>)
+    // arr.push(<div>11</div>)
+    // arr.push(<div>11</div>)
+    // arr.push(<div>11</div>)
+    //
+    // console.log("arr == "+arr[0]);
+    //
+    //
+    // return <svg><Rect key={0} width={blockUnit} height={blockUnit} x={10} y={10} fill={"black"} stroke="black" strokeWidth={5} /></svg>;
+
+    // return  <div>aal<svg><rect  width="70" height="10" color="black" /></svg>ccc</div>;
+
+    // return (<div> grorup</div>)
+
     return arr;
 }
 
+
+
+// const Tetromino = ({ shape, offsetX, offsetY, color }) => {
+//     const coordinates = getCoordinates(shape);
+//     const xs = coordinates.map((coord) => (coord.x * blockUnit) + offsetX);
+//     const ys = coordinates.map((coord) => (coord.y * blockUnit) + offsetY);
+//     return (
+//         <Group>
+//             {tetrominoGroup(xs, ys, color)}
+//         </Group>
+//     );
+// };
+
 const Tetromino = ({ shape, offsetX, offsetY, color }) => {
-    const coordinates = getCoordinates(shape);
+        const coordinates = getCoordinates(shape);
     const xs = coordinates.map((coord) => (coord.x * blockUnit) + offsetX);
     const ys = coordinates.map((coord) => (coord.y * blockUnit) + offsetY);
     return (
         <div>
-        <Group>
             {tetrominoGroup(xs, ys, color)}
-        </Group>
         </div>
     );
 };
