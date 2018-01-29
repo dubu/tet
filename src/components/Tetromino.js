@@ -19,42 +19,13 @@ function getCoordinates(shape) {
 
 function tetrominoGroup(xs, ys, color) {
     const arr = [];
-    // console.log("xs==" + ys)
     for (let i = 0 ; i<xs.length; i++) {
         arr.push(<Rect key={i} width={blockUnit} height={blockUnit} x={xs[i]} y={ys[i]} fill={color} stroke="black" strokeWidth={5} />);
     }
 
-
-    // arr.push(  <Text text="Try click on recttttt" />)
-    // arr.push(<div>11</div>)
-    // arr.push(<div>11</div>)
-    // arr.push(<div>11</div>)
-    //
-    // console.log("arr == "+arr[0]);
-    //
-    //
-    // return <Rect  width={blockUnit} height={blockUnit} x={10} y={10} fill={"black"} stroke="black" strokeWidth={5} />;
-
-    // return  <div>aal<svg><rect  width="70" height="10" color="black" /></svg>ccc</div>;
-
-    // return (<div> grorup</div>)
-
     return arr;
 
 }
-
-
-
-// const Tetromino = ({ shape, offsetX, offsetY, color }) => {
-//     const coordinates = getCoordinates(shape);
-//     const xs = coordinates.map((coord) => (coord.x * blockUnit) + offsetX);
-//     const ys = coordinates.map((coord) => (coord.y * blockUnit) + offsetY);
-//     return (
-//         <Group>
-//             {tetrominoGroup(xs, ys, color)}
-//         </Group>
-//     );
-// };
 
 const Tetromino = ({ shape, offsetX, offsetY, color }) => {
         const coordinates = getCoordinates(shape);
