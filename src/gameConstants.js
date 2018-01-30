@@ -11,7 +11,7 @@ for (let index = 0; index < 15; index++) {
 export default {
     fieldWidth: 300,
     fieldHeight: 660,
-    blockUnit: 30,
+    blockUnit: 10,
     shapesMapping: [
         'straight', 'square', 'cross', 'leftGun', 'rightGun', 'leftSnake', 'rightSnake',
     ],

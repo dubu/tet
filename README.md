@@ -7,3 +7,6 @@ edit package.json
 +   "deploy": "gh-pages -d build",
   "start": "react-scripts start",
   "build": "react-scripts build",
+
+
+  npm run deploy~
