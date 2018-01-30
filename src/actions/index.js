@@ -32,7 +32,7 @@ export const loadMenu = () => (
         function handleSpaceBar(e) {
             if (e.keyCode === 32) {
                 dispatch(loadGame());
-                dispatch(moveTetromino('down'));
+
 
                 window.removeEventListener('keyup', handleSpaceBar);
             }
@@ -47,15 +47,16 @@ export const loadMenu = () => (
 export const loadGame = () => (
     function (dispatch, getState){
         dispatch(startGame(),getState);
+        dropTetromino(dispatch, Date.now(), getState);
     }
 );
 
+export const dragGame = () => (
+    function (dispatch, getState){
+        dispatch( dropTetromino(dispatch, Date.now(), getState));
+    }
+);
 
-function dropTetromino(dispatch, startTime, getState) {
-
-    dispatch(moveTetromino('down'));
-
-}
 
 export const moveTetromino = (direction) => (
     function (dispatch, getState) {
@@ -68,3 +69,14 @@ export const moveDown = () => ({
     type: MOVE_DOWN,
 });
 
+// repeat
+function dropTetromino(dispatch, startTime, getState) {
+
+    const currentTime = Date.now();
+    const { gameStatus } = getState();
+    if (currentTime - startTime >= 500 && gameStatus !== 'PAUSED' && gameStatus !== 'GAME_OVER') {
+        startTime = currentTime;
+        dispatch(moveTetromino('down'));
+    }
+    requestAnimationFrame((dropTetromino.bind(this, dispatch, startTime, getState)));
+}

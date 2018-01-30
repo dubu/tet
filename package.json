@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://dubu.github.io/tet/",
   "dependencies": {
+    "d3": "3.5.17",
     "gh-pages": "^1.1.0",
     "konva": "^1.0.3",
     "material-ui": "^0.15.3",
