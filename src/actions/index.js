@@ -28,20 +28,43 @@ export const startGame = () => {
 };
 
 export const loadMenu = () => (
-    function(dispatch) {
+    function(dispatch,getState) {
         function handleSpaceBar(e) {
             if (e.keyCode === 32) {
                 dispatch(loadGame());
+                dispatch(moveTetromino('down'));
+
                 window.removeEventListener('keyup', handleSpaceBar);
             }
         }
         window.addEventListener('keyup', handleSpaceBar);
+
+
+        // dropTetromino(dispatch, Date.now() ,getState);
+
     }
 );
-
-
 export const loadGame = () => (
     function (dispatch, getState){
-        dispatch(startGame());
+        dispatch(startGame(),getState);
     }
 );
+
+
+function dropTetromino(dispatch, startTime, getState) {
+
+    dispatch(moveTetromino('down'));
+
+}
+
+export const moveTetromino = (direction) => (
+    function (dispatch, getState) {
+
+        dispatch(moveDown());
+    }
+);
+
+export const moveDown = () => ({
+    type: MOVE_DOWN,
+});
+

@@ -20,7 +20,7 @@ function gameStatus(state = 'IDLE', action) {
 function currentTetromino(state = {}, action) {
     switch (action.type) {
         case actions.START_GAME:
-            // console.log("start!!")
+            console.log("start!!")
             return {
                 shape: tetrominos[action.currentRandomShape].shape,
                 name: action.currentRandomShape,
